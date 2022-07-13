@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lep_nav_graph"
+    app:startDestination="@id/lepGameSettingsFragment">
+
+    <fragment
+        android:id="@+id/lepGameSettingsFragment"
+        android:name="com.dsfgland.goa.presentation.game.LepGameSettingsFragment"
+        android:label="LepGameSettingsFragment"
+        tools:layout="@layout/fragment_lep_game_settings">
+        <action
+            android:id="@+id/action_lepGameSettingsFragment_to_lepGameFragment"
+            app:destination="@id/lepGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lepGameFragment"
+        android:name="com.dsfgland.goa.presentation.game.LepGameFragment"
+        android:label="LepGameFragment"
+        tools:layout="@layout/fragment_lep_game" >
+        <action
+            android:id="@+id/action_lepGameFragment_to_lepGameResultsFragment"
+            app:destination="@id/lepGameResultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lepGameResultsFragment"
+        android:name="com.dsfgland.goa.presentation.game.LepGameResultsFragment"
+        android:label="LepGameResultsFragment"
+        tools:layout="@layout/fragment_lep_game_result" />
+</navigation>

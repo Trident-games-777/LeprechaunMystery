@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LeprechaunMystery</string>
+    <string name="facebook_application_id">1035920410397942</string>
+    <string name="facebook_client_token">ff24e9fdfd3bf7ed52ab78971c86e3f6</string>
+    <string name="choose_your_side">Choose your side</string>
+    <string name="start_game">Start game</string>
+    <string name="winner_text">%1$s won!</string>
+    <string name="try_again">Try again</string>
+</resources>
