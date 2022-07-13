@@ -48,6 +48,8 @@ class LepWebViewActivity : AppCompatActivity() {
 
         webView.settings.domStorageEnabled = true
         webView.settings.loadWithOverviewMode = false
+        webView.settings.userAgentString =
+            "Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36"
 
         webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
