@@ -112,7 +112,7 @@ class LepWebViewActivity : AppCompatActivity() {
         override fun onPageFinished(view: WebView?, url: String?) {
             super.onPageFinished(view, url)
             url?.let {
-                if (it.contains("leprechaunmystery.online")) {
+                if (it == "leprechaunmystery.online") {
                     start<LepGameActivity>()
                 } else {
                     lifecycleScope.launch(Dispatchers.IO) {

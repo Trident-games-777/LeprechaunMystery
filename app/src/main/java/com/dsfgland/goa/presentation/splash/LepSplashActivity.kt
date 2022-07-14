@@ -36,7 +36,5 @@ class LepSplashActivity : AppCompatActivity() {
         } else {
             start<LepGameActivity>()
         }
-
-
     }
 }
