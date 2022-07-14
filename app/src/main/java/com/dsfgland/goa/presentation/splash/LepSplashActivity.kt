@@ -23,7 +23,7 @@ class LepSplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (!SecureChecker(this@LepSplashActivity).secured) {
+        if (SecureChecker(this@LepSplashActivity).secured) {
             lifecycleScope.launch {
                 if (dataStore.data.first().asMap().isEmpty()) {
                     dataStore.edit { prefs ->
