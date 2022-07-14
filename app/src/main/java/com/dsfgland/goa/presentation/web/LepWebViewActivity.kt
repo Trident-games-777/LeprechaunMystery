@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Message
+import android.util.Log
 import android.webkit.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.lifecycleScope
+import com.dsfgland.goa.BASE_URL
 import com.dsfgland.goa.R
 import com.dsfgland.goa.databinding.ActivityLepWebViewBinding
 import com.dsfgland.goa.presentation.game.LepGameActivity
@@ -116,7 +118,9 @@ class LepWebViewActivity : AppCompatActivity() {
                     start<LepGameActivity>()
                 } else {
                     lifecycleScope.launch(Dispatchers.IO) {
-                        if (dataStore.data.first()[booleanPreferencesKey(IS_SAVED_KEY)] == false) {
+                        if (dataStore.data.first()[booleanPreferencesKey(IS_SAVED_KEY)] == false &&
+                            !it.contains(BASE_URL)
+                        ) {
                             dataStore.edit { prefs ->
                                 prefs[stringPreferencesKey(URL_KEY)] = it
                                 prefs[booleanPreferencesKey(IS_SAVED_KEY)] = true
